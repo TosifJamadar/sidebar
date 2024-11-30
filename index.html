@@ -5,7 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
 </head>
+<style>
+    body{
+        margin: 0%;
+        padding: 0%;
+    }
+    .sidebar{
+        width: 170px;
+        height: 100vh;
+        border-right: 1px solid gray;
+        background-color:#a3a3c2;
+        box-shadow: 0 0 10px 5px rgb(197, 197, 197);
+        visibility: hidden;
+    }
+    .menu-item{
+        padding: 5px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: end;
+        cursor: pointer;
+        border-radius: 0 25px 25px 0;
+    }
+    .close-menu{
+        text-align: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .menu-item:hover{
+        background-color: #fff;
+        border: 1px solid black;
+    }
+    .menu-icon{
+        font-size: 20px;
+    }
+    .menu-text{
+        text-decoration: none;
+        color: #000;
+        margin-left: 5px;
+    }
+    .hamburger-menu{
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+    }
+</style>
 <body>
-    
+    <i class="fa-solid fa-bars hamburger-menu" onclick="openSiderbar()" id="hamburger-menu"></i>
+    <div class="sidebar" id="sidebar">
+        <div class="close-menu" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <!-- First Menu -->
+        <div class="menu-item">
+            <i class="fa-solid fa-house menu-icon"></i>
+            <a href="#" class="menu-text">Home</a>
+        </div>
+         <!-- Secound Menu -->
+        <div class="menu-item">
+            <i class="fa-solid fa-address-card menu-icon"></i>
+            <a href="#" class="menu-text">About</a>
+        </div>
+         <!-- Third Menu -->
+        <div class="menu-item">
+            <i class="fa-regular fa-address-book menu-icon"></i>
+            <a href="#" class="menu-text">Contact</a>
+        </div>
+         <!-- Fourth Menu -->
+        <div class="menu-item">
+            <i class="fa-solid fa-cart-shopping menu-icon"></i>
+            <a href="#" class="menu-text">Cart</a>
+        </div>
+         <!-- Fifth Menu -->
+        <div class="menu-item">
+            <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+            <a href="#" class="menu-text">Logout</a>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/f80ec2f635.js" crossorigin="anonymous"></script>
+    <script>
+        function openSiderbar(){
+            const sidebarElement = document.getElementById('sidebar');
+            sidebarElement.style.visibility = 'visible';
+
+            const hamburgerMenuElement = document.getElementById('hamburger-menu');
+            hamburgerMenuElement.style.visibility = 'hidden'
+        }
+        function closeSidebar(){
+            const sidebarElement = document.getElementById('sidebar');
+            sidebarElement.style.visibility = 'hidden';
+
+            const hamburgerMenuElement = document.getElementById('hamburger-menu');
+            hamburgerMenuElement.style.visibility = 'visible'
+        }
+    </script>
 </body>
 </html>
